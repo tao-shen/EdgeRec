@@ -47,7 +47,7 @@ This repository is the implement of EdgeRec using [Mobile Intelligent Dataset](h
 | scores only | 0.7277 |
 | trained model | 0.7310 |
 
-On full dataset, the baseline `auc:0.7277` is evaluated only using scores in samples, which is provided by cloud. We train the [DIN](https://arxiv.org/abs/1706.06978) model, with `batchsize=10000`,`lr=0.001`, the result `auc:0.7310`, shows in the Table.
+On full dataset, the baseline `auc:0.7277` is evaluated only using scores in test samples, which is provided by cloud. We train the [DIN](https://arxiv.org/abs/1706.06978) model, with `batchsize=10000`,`lr=0.001`, the result `auc:0.7310`, shows in the Table.
 
 
 ## License
