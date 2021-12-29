@@ -1,5 +1,5 @@
 # EdgeRec
-This repository is the implement of EdgeRec using [Mobile Intelligent Dataset](https://tianchi.aliyun.com/dataset/dataDetail?dataId=109858)
+This repository is the implement of EdgeRec using [Mobile Intelligent Dataset](https://tianchi.aliyun.com/dataset/dataDetail?dataId=109858)(part 1).
 
 ### Prerequisites
   - A basic pytorch installation. The version is **1.7**.
@@ -15,7 +15,7 @@ This repository is the implement of EdgeRec using [Mobile Intelligent Dataset](h
 
     We setup two datasize of data:  `full` refers to the full dataset and `demo` refers to the first 10000 samples of the full dataset. 
     
-    We provide the demo dataset here and you can find the detailed description and download te full dataset [here](https://tianchi.aliyun.com/dataset/dataDetail?dataId=109858).
+    We provide the demo dataset here and you can find the detailed description and download te full dataset [here](https://tianchi.aliyun.com/dataset/dataDetail?dataId=109858)(part 1).
     ```Yaml
         # demo dataset
         datasize: demo
@@ -28,10 +28,27 @@ This repository is the implement of EdgeRec using [Mobile Intelligent Dataset](h
         lr: 0.001
         batchsize: 10000
     ```
-2. Run the `main.py`, for example
+2. Run the `main.py`
+
+    if you want to run on the demo dataset, for example
     ```Shell
     python main.py --device=cuda:0 --datasize=demo --lr=0.01 --batchsize=100
     ```
+    if you want to run on the full dataset, for example
+    ```Shell
+    python main.py --device=cuda:0 --datasize=full --lr=0.001 --batchsize=10000
+    ```
+    **Note:** The parsed arguments will overwrite the configuration in yaml file.
+
+### Results
+
+|  Setting | AUC |
+| ------------- | ------------- |
+| scores only | 0.7277 |
+| trained model | 0.7310 |
+
+On full dataset, the baseline `auc:0.7277` is evaluated only using scores in samples, which is provided by cloud. We train the [DIN](https://arxiv.org/abs/1706.06978) model, with `batchsize=10000`,`lr=0.001`, the result `auc:0.7310`, shows in the Table.
+
 
 ## License
  
