@@ -1,0 +1,44 @@
+datasize: full
+device: cuda:3
+lr: 0.001
+batchsize: 10000
+
+embedding:
+  { 'user_os': {num: 3, size: 2},
+    'user_gender': {num: 3, size: 2},
+    'user_age_level': {num: 9, size: 3},
+    'user_purchase_level': {num: 9, size: 3},
+    'user_hour': {num: 25, size: 5},
+    'item_pos': {num: 51, size: 5},
+    'item_pagenum': {num: 51, size: 5},
+    'item_sex': {num: 5, size: 2},
+    'item_price_level': {num: 9, size: 3},
+    'item_age_level': {num: 8, size: 3},
+    'item_bc_type': {num: 3, size: 2},}
+
+features:
+  cat_feats: ['user_os',
+    'user_gender',
+    'user_age_level',
+    'user_purchase_level',
+    'user_hour',
+    'cand_item_pos',
+    'cand_item_pagenum',
+    'cand_item_sex',
+    'cand_item_price_level',
+    'cand_item_age_level',
+    'cand_item_bc_type',]
+  seq_feats: ['exp_item_pos_seq',
+    'exp_item_pagenum_seq',
+    'exp_item_sex_seq',
+    'exp_item_price_level_seq',
+    'exp_item_age_level_seq',
+    'exp_item_bc_type_seq',
+    'ipv_item_pos_seq',
+    'ipv_item_pagenum_seq',
+    'ipv_item_sex_seq',
+    'ipv_item_price_level_seq',
+    'ipv_item_age_level_seq',
+    'ipv_item_bc_type_seq',]
+  num_feats: ['score']
+  label: ['label']
