@@ -1,7 +1,12 @@
-datasize: full
-device: cuda:3
-lr: 0.001
-batchsize: 10000
+datasize: demo
+device: cuda:0
+lr: 0.01
+batchsize: 100
+
+# datasize: full
+# device: cuda:0
+# lr: 0.001
+# batchsize: 10000
 
 embedding:
   { 'user_os': {num: 3, size: 2},
